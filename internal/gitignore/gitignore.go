@@ -89,7 +89,7 @@ func parseLine(line string) (Pattern, bool, error) {
 		rest = rest[1:]
 	}
 	// 5. 目录规则：行尾 / 。
-	if rest[len(rest)-1] == '/' {
+	if rest != "" && rest[len(rest)-1] == '/' {
 		p.DirOnly = true
 		rest = rest[:len(rest)-1]
 	}
